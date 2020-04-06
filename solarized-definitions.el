@@ -249,10 +249,19 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (lazy-highlight (:inherit match)) ; Search
                 (menu (,@fg-base0 ,@bg-base02))
                 (minibuffer-prompt (,@fmt-bold ,@fg-cyan)) ; Question
-                (mode-line ; StatusLine
-                 (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))
-                (mode-line-inactive    ; StatusLineNC
-                 (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))
+                ;; (mode-line ; StatusLine
+                ;;  (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))
+                ;; (mode-line-inactive    ; StatusLineNC
+                ;;  (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))
+                (mode-line (,@fg-base1 ,@bg-base02
+                                       :box (:line-width 1 :color base0)))
+                (mode-line-buffer-id (,@fmt-bold ,@fg-magenta :background nil))
+                (mode-line-inactive (:inherit mode-line
+                                              ,@fg-base01
+                                              ,@bg-base02
+                                              :box (:line-width 1 :color base01)))
+		(mode-line-emphasis (,@fmt-ital))
+		(mode-line-highlight (,@fmt-bold ,@fg-violet :box nil))
                 (region (,@fg-base01 ,@bg-base03 ,@fmt-revbb)) ; Visual
                 (secondary-selection (,@bg-base02))
                 (shadow (,@fg-base01))
