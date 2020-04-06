@@ -240,7 +240,8 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (escape-glyph-face (,@fg-red))
                 (fringe (,@fg-base01 ,@bg-base02))
                 (linum (,@fg-base01 ,@bg-base02))
-                (header-line (,@fg-base0 ,@bg-base02 ,@fmt-revbb)) ; Pmenu
+                (header-line (,@fg-base0 ,@bg-base02 ,@fmt-revbb
+                                         :box (:line-width 2 :color base02))) ; Pmenu
                 (highlight (,@bg-base02))
                 (hl-line (:underline ,opt-under ,@bg-base02)) ; CursorLine
                 (isearch (,@fmt-stnd ,@fg-orange ,@bg-back)) ; IncSearch
